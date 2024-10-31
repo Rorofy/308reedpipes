@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+
+from sys import argv, exit
+from src import SplineCalc as spline
+from src import utilities as ut
+
+
+def main():
+    try:
+        if len(argv) != 7:
+            raise ValueError("Usage: ./308reedpipes r0 r5 r10 r15 r20 n")
+        ut.argsInit(argv)
+        spline.calculate()
+        ut.displayResult()
+    except BaseException as e:
+        print(e)
+        exit(84)
+
+
+main()
